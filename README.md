@@ -10,7 +10,8 @@ Planned containers:
 
 Suggestions about better code and/or containers to do next are always welcome. 
 
-UPD: Planning to integrate full support of CMakeFiles soon.
+UPD:  Planning to integrate full support of CMakeLists soon.
+UPD2: CMakeLists are introduced but they are not fully supported yet.
 
 Regards,
 /BD
