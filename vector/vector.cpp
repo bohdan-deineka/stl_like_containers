@@ -218,5 +218,5 @@ uint32_t Vector<T>::capacity() const
 template <class T>
 bool Vector<T>::empty() const
 {
-	return mSize = 0;
+	return mSize == 0;
 }
