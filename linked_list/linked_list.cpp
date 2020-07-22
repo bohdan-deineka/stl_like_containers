@@ -73,6 +73,182 @@ LinkedList<T>::~LinkedList()
  * Refer to method declaration for details.
  */
 template <class T>
+void LinkedList<T>::insert(T aValue)
+{
+    Node<T> *toInsert = new Node<T>(aValue);
+    Node<T> *succ = mHead;
+    Node<T> *pred = nullptr;
+
+    while(succ -> mData > toInsert -> mData)
+    {
+        pred = succ;
+        succ = succ -> next;
+    }
+
+    pred -> mNext = toInsert;
+    toInsert -> mNext = succ;
+
+    mSize++;
+}
+
+/**
+ * Refer to method declaration for details.
+ */
+template <class T>
+void LinkedList<T>::deleteFirst()
+{
+    if (mHead != nullptr)
+    {
+        Node<T> *killer = mHead;
+        mHead = mHead -> mNext;
+        delete killer;
+        
+        mSize--;
+    }
+}
+
+/**
+ * Refer to method declaration for details.
+ */
+template <class T>
+void LinkedList<T>::deleteLast()
+{
+    if (mHead != nullptr)
+    {
+        Node<T> *killer = mHead;        
+        Node<T> *pred = nullptr;
+
+        while (killer -> mNext != nullptr)
+        {
+            pred = killer;
+            killer = killer -> mNext;
+        }
+        delete killer;
+        pred -> mNext = nullptr;
+
+        mSize--;
+    }
+}
+
+/**
+ * Refer to method declaration for details.
+ */
+template <class T>
+void LinkedList<T>::deleteOfValue(T aValue)
+{
+    if (mHead != nullptr)
+    {
+        Node<T> *killer = mHead;        
+        Node<T> *pred = nullptr;
+
+        while (killer -> mValue != aValue || killer -> mNext != nullptr)
+        {
+            pred = killer;
+            killer = killer -> mNext;
+        }
+
+        if (killer -> mValue != aValue)
+        {
+            pred -> mNext = killer -> mNext;            
+            delete killer;
+            
+            mSize--;
+        }
+    }
+}
+
+/**
+ * Refer to method declaration for details.
+ */
+template <class T>
+void LinkedList<T>::insert(T aValue)
+{
+    Node<T> *toInsert = new Node<T>(aValue);
+    Node<T> *succ = mHead;
+    Node<T> *pred = nullptr;
+
+    while(succ -> mData > toInsert -> mData)
+    {
+        pred = succ;
+        succ = succ -> next;
+    }
+
+    pred -> mNext = toInsert;
+    toInsert -> mNext = succ;
+
+    mSize++;
+}
+
+/**
+ * Refer to method declaration for details.
+ */
+template <class T>
+void LinkedList<T>::deleteFirst()
+{
+    if (mHead != nullptr)
+    {
+        Node<T> *killer = mHead;
+        mHead = mHead -> mNext;
+        delete killer;
+        
+        mSize--;
+    }
+}
+
+/**
+ * Refer to method declaration for details.
+ */
+template <class T>
+void LinkedList<T>::deleteLast()
+{
+    if (mHead != nullptr)
+    {
+        Node<T> *killer = mHead;        
+        Node<T> *pred = nullptr;
+
+        while (killer -> mNext != nullptr)
+        {
+            pred = killer;
+            killer = killer -> mNext;
+        }
+        delete killer;
+        pred -> mNext = nullptr;
+
+        mSize--;
+    }
+}
+
+/**
+ * Refer to method declaration for details.
+ */
+template <class T>
+void LinkedList<T>::deleteOfValue(T aValue)
+{
+    if (mHead != nullptr)
+    {
+        Node<T> *killer = mHead;        
+        Node<T> *pred = nullptr;
+
+        while (killer -> mValue != aValue || killer -> mNext != nullptr)
+        {
+            pred = killer;
+            killer = killer -> mNext;
+        }
+
+        if (killer -> mValue != aValue)
+        {
+            pred -> mNext = killer -> mNext;            
+            delete killer;
+            
+            mSize--;
+        }
+    }
+}
+
+/**
+ * Refer to method declaration for details.
+ */
+template <class T>
 LinkedList<T>& LinkedList<T>::operator=(const LinkedList<T>& aLinkedList)
 {
     LinkedList<T> temp(aLinkedList);
