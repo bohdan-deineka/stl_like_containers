@@ -4,7 +4,7 @@ Here is my humble take on implementing versions of some of the popular STL conta
 
 Planned containers:
 1. Vector (done).
-2. Linked list (partially done).
+2. Linked list (done).
 3. Double ended linked list.
 4. Ring Buffer.
 
