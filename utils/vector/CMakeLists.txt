@@ -1,11 +1,19 @@
 cmake_minimum_required(VERSION 2.8)
 
-project(vector)
-
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
-
-set(vector_src_files
-    vector.cpp
+set(SRC_DIR 
+    "${CMAKE_CURRENT_SOURCE_DIR}/src"
 )
 
-add_library(vector STATIC ${vector_src_files})
+set(SRC 
+    "${SRC_DIR}/vector.cpp"
+)
+
+set(INC_DIR 
+    "${CMAKE_CURRENT_SOURCE_DIR}/inc"
+)
+
+addUtilTarget(
+    TARGET_NAME vector 
+    SRC_FILES ${SRC}
+    PUBLIC_INC_DIRS ${INC_DIR}
+)
